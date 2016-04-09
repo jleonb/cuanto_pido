@@ -1,0 +1,59 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sup1: MyString
+  sup2: MyString
+  sup3: MyString
+  sup4: MyString
+  sup5: MyString
+  sup6: MyString
+  sup7: MyString
+  sup8: MyString
+  sup9: MyString
+  sup10: MyString
+  pri1: 1
+  pri2: 1
+  pri3: 1
+  pri4: 1
+  pri5: 1
+  pri6: 1
+  pri7: 1
+  pri8: 1
+  pri9: 1
+  pri10: 1
+  total_sup: 1
+  name: MyString
+  hours: 1
+  hours_price: 1
+  margin: 9.99
+  img: MyString
+  final_price: MyString
+
+two:
+  sup1: MyString
+  sup2: MyString
+  sup3: MyString
+  sup4: MyString
+  sup5: MyString
+  sup6: MyString
+  sup7: MyString
+  sup8: MyString
+  sup9: MyString
+  sup10: MyString
+  pri1: 1
+  pri2: 1
+  pri3: 1
+  pri4: 1
+  pri5: 1
+  pri6: 1
+  pri7: 1
+  pri8: 1
+  pri9: 1
+  pri10: 1
+  total_sup: 1
+  name: MyString
+  hours: 1
+  hours_price: 1
+  margin: 9.99
+  img: MyString
+  final_price: MyString

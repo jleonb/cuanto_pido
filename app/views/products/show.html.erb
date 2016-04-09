@@ -1,0 +1,116 @@
+<%= render :partial => 'partials/menu_gral' %>
+
+<!-- Bloc Group -->
+<div class='bloc-group'>
+  <!-- bloc-2 -->
+  <div class="bloc bgc-anti-flash-white bloc-tile-2 d-bloc tc-white" id="bloc-2">
+    <div class="container bloc-md">
+      <div class="row">
+
+        <div class="col-sm-12">
+          <%= link_to image_tag @product.img.url(:large), :class => "center-block img-responsive img-frame" %>
+
+        </div>
+        <div class="fb-comments" data-href="http://www.cuantopido.cl" data-width="500" data-numposts="5"></div>
+      </div>
+    </div>
+  </div>
+  <!-- bloc-2 END -->
+  <!-- bloc-3 -->
+  <div class="bloc bgc-anti-flash-white bloc-tile-2 d-bloc" id="bloc-3">
+    <div class="container bloc-lg">
+      <div class="row">
+        <div class="col-sm-12">
+          <h3 class="mg-md  tc-black">
+            <strong><%= @product.brand %></strong>
+            <strong><%= @product.model %></strong>
+          </h3>
+          <p>
+            <%= simple_format (@product.description) %>
+          </p>
+          <p>
+            Calificación: <%= rating_for @product, "rate", :star => 5, star_path: '/images/' %>
+          </p>
+
+
+          <br>
+          <div id="mini_logo">
+            <%= image_tag "https://s3-us-west-2.amazonaws.com/cuantopido/loguito.png", :class => "mg-sm", :alt => "logo" %>
+          </div>
+          <div class="panel">
+            <div class="panel-heading">
+              <h3 class="mg-clear text-center ">
+                <strong>PRECIO MERCADO</strong>
+              </h3>
+            </div>
+            <div class="panel-body">
+              <p class="text-center">
+
+                  Nuevo: <strong> $<%= number_with_delimiter (@product.price), :delimiter => "." %>.- </strong><br/>
+                  Semi nuevo <strong> $<%= number_with_delimiter (@product.price / 100 * 81), :delimiter => "." %>.- </strong>Aprox.<br>
+                  Buenas condiciones <strong> $<%= number_with_delimiter ((@product.price / 100 * 81)-(@product.price / 100 * 10)), :delimiter => "." %>.- </strong>Aprox.  <br>
+                </strong>
+              </p>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-heading">
+              <h3 class="mg-clear  text-center">
+                <strong>COTIZAR PRODUCTO NUEVO EN RETAIL</strong>
+              </h3>
+            </div>
+            <div class="panel-body brands">
+              <div class="row">
+                <div class="col-sm-4 text-center">
+                  <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/cuantopido/falabella.jpg"), "http://www.falabella.com/falabella-cl/search/?Ntt=" + @product.model.to_s, :target => "_blank", :alt => "logo falabella", :class => "img-responsive center-block" %>
+                </div>
+                <div class="col-sm-4 text-center">
+                  <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/cuantopido/ripley.jpg"), "http://www.ripley.cl/webapp/wcs/stores/servlet/SearchDisplay?storeId=10151&catalogId=10051&langId=-5&pageSize=24&beginIndex=0&searchSource=Q&sType=SimpleSearch&resultCatEntryType=2&showResultsPage=true&pageView=image&categoryId=&searchTerm=" + @product.model.to_s, :target => "_blank", :alt => "logo ripley", :class => "img-responsive center-block" %>
+                </div>
+                <div class="col-sm-4 text-center">
+                  <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/cuantopido/paris.jpg"), "http://www.paris.cl/webapp/wcs/stores/servlet/SearchDisplay?storeId=10801&catalogId=40000000629&langId=-5&pageSize=30&beginIndex=0&searchSource=Q&sType=SimpleSearch&resultCatEntryType=2&showResultsPage=true&pageView=image&searchTerm=" + @product.model.to_s, :target => "_blank", :alt => "logo paris", :class => "img-responsive center-block" %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-heading">
+              <h3 class="mg-clear text-center tc-orange">
+                <strong>COTIZAR PRODUCTO USADO</strong>
+              </h3>
+            </div>
+            <div class="panel-body brands">
+              <div class="row">
+                <div class="col-sm-6 text-center">
+                  <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/cuantopido/mercadolibre.jpg"), "http://listado.mercadolibre.cl/" + @product.model.to_s, :target => "_blank", :alt => "logo mercadolibre" %>
+                </div>
+                <div class="col-sm-6 text-center">
+                  <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/cuantopido/yapo.jpg"), "http://www.yapo.cl/chile/todos_los_avisos?ca=15_s&l=0&q=" + @product.model.to_s, :target => "_blank", :alt => "logo yapo" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% if admin_signed_in? %>
+        <%= link_to 'Editar', edit_product_path(@product), :class => " btn btn-default btn-xs" %>
+        <%= link_to 'Cancelar', products_path, :class => " btn btn-default btn-xs" %>
+    <% else %>
+    <% end %>
+  </div>
+  <!-- bloc-3 END -->
+
+</div>
+<!-- Bloc Group END -->
+
+
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5&appId=129263057073";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>

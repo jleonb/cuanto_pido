@@ -1,0 +1,64 @@
+<%= render :partial => 'partials/menu_gral' %>
+
+<!-- bloc-8 -->
+<div class="bloc bgc-anti-flash-white l-bloc" id="">
+  <div class="container bloc-sm">
+    <div class="row">
+      <div class="col-sm-12">
+        <h3 class="mg-md text-center tc-orange">
+          <strong>SERVICIOS</strong>
+        </h3>
+        <% if user_signed_in? %>
+            <%= link_to new_service_path do %>
+                <li class="tc-onyx btn btn-charcoal btn-sq">
+                  <span class="fa fa-arrow-up fa-fw"></span> PUBLICAR SERVICIO
+                </li>
+            <% end %>
+        <% else %>
+        <p>
+          *Para publicar un servicio debes <%= link_to " Iniciar Sesión", new_user_session_path %>
+        </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- bloc-8 END -->
+
+<!-- bloc-9 -->
+<div class="bloc bgc-anti-flash-white l-bloc" id="">
+  <div class="container bloc-sm">
+    <div class="row">
+      <div class="row">
+
+        <% @services.each do |service| %>
+            <div class="col-md-3" id="listado_productos">
+              <div class="thumbnail">
+                <%= link_to service do %>
+                    <%= image_tag service.img.url(:large), :class => "img-responsive center-block img-frame prod" %>
+                    <div class="caption">
+                      <h5 class="tc-onyx">
+                        <%= service.name %>
+                      </h5>
+                    </div>
+                <% end %>
+                <% if admin_signed_in? %>
+                    <%= link_to 'Ver', service, :class => "tc-onyx btn btn-default btn-xs" %>
+                    <%= link_to 'Editar', edit_service_path(service), :class => "tc-onyx btn btn-default btn-xs" %>
+                    <%= link_to 'Eliminar', service, method: :delete, data: {confirm: 'Estas seguro?'}, :class => "tc-onyx btn btn-default btn-xs" %>
+                    </div>
+                <% else %>
+                <% end %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+  </div>
+</div>
+</div>
+<!-- bloc-9 END -->
+
+
+
+
+

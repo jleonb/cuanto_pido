@@ -1,0 +1,59 @@
+<%= render :partial => 'partials/menu_devise' %>
+
+<div class="bloc bgc-anti-flash-white l-bloc" id="session">
+  <div class="container bloc-lg">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="row">
+          <div class="col-sm-3">
+            <span class="empty-column"></span>
+          </div>
+          <div class="col-sm-6">
+            <div class="panel">
+              <div class="panel-heading bgc-charcoal">
+                <h4 class="mg-clear tc-white text-center">
+                  REGISTRATE EN ¿CUANTO PIDO?
+                </h4>
+              </div>
+              <div class="panel-body">
+
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                    <%= devise_error_messages! %>
+                    <div class="field">
+                      <p><strong>Email</strong></p>
+                      <%= f.email_field :email, autofocus: true %>
+                    </div>
+                    <div class="field">
+                      <p><strong>Contraseña</strong>
+                        <% if @minimum_password_length %>
+                            <em>(<%= @minimum_password_length %> cacteres)</em>
+                        <% end %></p>
+                      <%= f.password_field :password, autocomplete: "off" %>
+                    </div>
+
+                    <div class="field">
+                      <p><strong>Confirmar contraseña</strong></p>
+                      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+                    </div>
+                    <br>
+                    <div class="actions">
+                      <%= f.submit "Registrar", :class => "btn   btn-sq btn-charcoal" %>
+                    </div>
+                <% end %>
+
+                <p>
+                  <%= render "devise/shared/links" %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <span class="empty-column"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

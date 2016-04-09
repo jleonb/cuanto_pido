@@ -1,0 +1,233 @@
+<%= render :partial => 'partials/menu_gral' %>
+
+<%= form_for(@service) do |f| %>
+    <% if @service.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@service.errors.count, "error") %> prohibited this serv from being saved:</h2>
+
+          <ul>
+            <% @serv.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <!-- bloc-7 -->
+    <div class="bloc bgc-anti-flash-white l-bloc" id="bloc-7">
+      <div class="container bloc-sm">
+        <div class="row">
+          <div class="col-sm-12">
+            <h3 class="mg-md text-center tc-orange">
+              <strong>PRESUPUESTO DE SERVICIOS</strong>
+            </h3>
+            <p class="mg-md text-center">
+              <strong>Si realizas algún servicio y quieres que nuestros usuarios te contacten, completa el siguiente formulario:</strong>
+            </p>
+          </div>
+        </div>
+        <br><br>
+        <div class="row voffset">
+          <div class="col-sm-6">
+            <form>
+              <div class="form-group">
+                <label>
+                  Insumo 01
+                </label><br>
+                <%= f.text_field :sup1, :class => "form-control" %>
+              </div>
+              <div class="form-group">
+                <label>
+                  Valor
+                </label>
+                <%= f.number_field :pri1, :class => "form-control"  %>
+              </div>
+              <div class="form-group">
+                <label>
+                  Insumo 02
+                </label><br>
+                <%= f.text_field :sup2, :class => "form-control" %>
+              </div>
+              <div class="form-group">
+                <label>
+                  Valor
+                </label>
+                <%= f.number_field :pri2, :class => "form-control"  %>
+              </div>
+              <div class="form-group">
+                <label>
+                  Insumo 03
+                </label><br>
+                <%= f.text_field :sup3, :class => "form-control" %>
+              </div>
+              <div class="form-group">
+                <label>
+                  Valor
+                </label>
+                <%= f.number_field :pri3, :class => "form-control"  %>
+              </div>
+              <div class="form-group">
+                <label>
+                  Insumo 04
+                </label><br>
+                <%= f.text_field :sup4, :class => "form-control" %>
+              </div>
+              <div class="form-group">
+                <label>
+                  Valor
+                </label>
+                <%= f.number_field :pri4, :class => "form-control"  %>
+              </div>
+              <div class="form-group">
+                <label>
+                  Insumo 05
+                </label><br>
+                <%= f.text_field :sup5, :class => "form-control" %>
+              </div>
+              <div class="form-group">
+                <label>
+                  Valor
+                </label>
+                <%= f.number_field :pri5, :class => "form-control"  %>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>
+                  Insumo 06
+                </label><br>
+                <%= f.text_field :sup6, :class => "form-control" %>
+              </div>
+              <div class="form-group">
+                <label>
+                  Valor
+                </label>
+                <%= f.number_field :pri6, :class => "form-control"  %>
+              </div>
+              <div class="form-group">
+                <label>
+                  Insumo 07
+                </label><br>
+                <%= f.text_field :sup7, :class => "form-control" %>
+              </div>
+              <div class="form-group">
+                <label>
+                  Valor
+                </label>
+                <%= f.number_field :pri7, :class => "form-control"  %>
+              </div>
+              <div class="form-group">
+                <label>
+                  Insumo
+                </label><br>
+                <%= f.text_field :sup8, :class => "form-control" %>
+              </div>
+              <div class="form-group">
+                <label>
+                  Valor
+                </label>
+                <%= f.number_field :pri8, :class => "form-control"  %>
+              </div>
+              <div class="form-group">
+                <label>
+                  Insumo
+                </label><br>
+                <%= f.text_field :sup9, :class => "form-control" %>
+              </div>
+              <div class="form-group">
+                <label>
+                  Valor
+                </label>
+                <%= f.number_field :pri9, :class => "form-control"  %>
+              </div>
+              <div class="form-group">
+                <label>
+                  Insumo
+                </label><br>
+                <%= f.text_field :sup10, :class => "form-control" %>
+              </div>
+              <div class="form-group">
+                <label>
+                  Valor
+                </label>
+                <%= f.number_field :pri10, :class => "form-control"  %>
+              </div>
+              <div class="form-group">
+                <label>
+                  TOTAL INSUMOS
+                </label>
+
+              </div>
+            </div>
+        </div>
+        <div class="row voffset">
+          <div class="form-group">
+            <div class="col-sm-6">
+              <p></p> <br><br>
+              <div class="form-group">
+                <label>
+                  Servicio (nombre)
+                </label>
+                <%= f.text_field :name, :class => "form-control" %>
+              </div>
+              <div class="field">
+                <label>
+                  Imagen (600*400px)
+                </label>
+                <%= f.file_field :img %>
+              </div>
+              <div class="form-group">
+                <label>
+                  Descripción
+                </label>
+                <%= f.text_area :description, :class => "form-control" %>
+              </div>
+              <div class="form-group">
+                <label>
+                  Horas de trabajo
+                </label>
+                <%= f.text_field :hours, :class => "form-control" %>
+              </div>
+              <div class="form-group">
+                <label>
+                  Valor por hora
+                </label>
+                <%= f.text_field :hours_price, :class => "form-control" %>
+              </div>
+              <div class="form-group">
+                <label>
+                  Despacho
+                </label>
+                <%= f.text_field :dispatch, :class => "form-control" %>
+              </div>
+              <div class="form-group">
+                <label>
+                  Margen deseado % (ganancia)
+                </label>
+                <%= f.text_field :margin, :class => "form-control" %>
+              </div>
+              <div class="form-group">
+                <label>
+                  VALOR FINAL DEL PROYECTO
+                </label>
+                <%= f.text_field :final_price, :class => 'form-control' %>
+              </div>
+          </div>
+
+
+              <div class='form-group-sm'>
+                <div class='btn-group pull-right' role='group' aria-label="...">
+                  <button type="button" class="btn btn-default"><%= link_to 'Cancelar', services_path %></button>
+                </div>
+                <%= button_tag(type: 'submit', class: 'btn btn-sq btn-charcoal pull-right') do %>
+                    <i class='fa fa-arrow-up  icon-spacer'></i> PUBLICAR SERVICIO
+                <% end %>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- bloc-7 END -->
+
+<% end %>

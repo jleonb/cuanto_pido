@@ -1,0 +1,105 @@
+<%= form_for @product, html: {multipart: true} do |f| %>
+    <% if @product.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+          <ul>
+            <% @product.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class='bloc-group'>
+
+      <!-- bloc-6 -->
+      <div class="bloc bgc-anti-flash-white d-bloc" id="bloc-6">
+        <div class=" bloc-sm">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="panel animated fadeInRight">
+                <div class="panel-body">
+                  <div class="field">
+                    <p>IMAGEN</p>
+                    <%= f.file_field :img %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- bloc-6 END -->
+
+      <!-- bloc-7 -->
+      <div class="bloc bgc-anti-flash-white d-bloc" id="bloc-7">
+        <div class="bloc-sm	">
+          <div class="row">
+            <div class="col-sm-12">
+              <form id="form-2" novalidate class="animated fadeIn">
+                <div class="form-group">
+                  <label>
+                    Categoría
+                  </label> <br>
+                  <%= f.text_field :category, :class => "form-control" %>
+                </div>
+                <div class="form-group">
+                  <label>
+                    Marca
+                  </label> <br>
+                  <%= f.text_field :brand, :class => "form-control" %>
+                </div>
+                <div class="form-group">
+                  <label>
+                    Modelo
+                  </label> <br>
+                  <%= f.text_field :model, :class => "form-control" %>
+                </div>
+                <div class="form-group">
+                  <label>
+                    Descripción
+                  </label> <br>
+                  <%= f.text_area :description, :class => "form-control" %>
+                </div>
+                <div class="form-group">
+                  <label>
+                    Precio Producto Nuevo
+                  </label> <br>
+                  <%= f.number_field :price, :class => "form-control" %>
+                </div>
+                <div class="form-group">
+                  <label>
+                    Precio Semi Nuevo Entre (0.X)
+                  </label> <br>
+                  <%= f.number_field :sn1, :class => "form-control", :type => "number", :step => "0.01" %>
+                </div>
+                <div class="form-group">
+                  <label>
+                    Y (0.X)
+                  </label> <br>
+                  <%= f.number_field :sn2, :class => "form-control", :type => "number", :step => "0.01" %>
+                </div>
+                <div class="form-group">
+                  <label>
+                    Precio Buenas Condiciones Entre (0.X)
+                  </label> <br>
+                  <%= f.number_field :bc1, :class => "form-control", :type => "number", :step => "0.01" %>
+                </div>
+                <div class="form-group">
+                  <label>
+                    Y (0.X)
+                  </label> <br>
+                  <%= f.number_field :bc2, :class => "form-control", :type => "number", :step => "0.01" %>
+                </div>
+                <%= f.submit "Ok!, Subir Producto", :class => "btn btn-sq btn-charcoal" %>
+                <div class="btn-group" role="group" aria-label="...">
+                  <button type="button" class="btn btn-default"><%= link_to 'Cancelar', products_path %></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>

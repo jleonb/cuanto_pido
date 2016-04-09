@@ -1,0 +1,81 @@
+<%= render :partial => 'partials/menu_gral' %>
+
+<!-- Bloc Group -->
+<div class='bloc-group'>
+  <!-- bloc-2 -->
+  <div class="bloc bgc-anti-flash-white bloc-tile-2 d-bloc tc-white" id="bloc-2">
+    <div class="container bloc-md">
+      <div class="row">
+
+        <div class="col-sm-12">
+          <%= link_to image_tag @service.img.url(:large), :class => "center-block img-responsive img-frame" %>
+
+        </div>
+        <div class="fb-comments" data-href="http://www.cuantopido.cl" data-width="500" data-numposts="5"></div>
+      </div>
+    </div>
+  </div>
+  <!-- bloc-2 END -->
+  <!-- bloc-3 -->
+  <div class="bloc bgc-anti-flash-white bloc-tile-2 d-bloc" id="bloc-3">
+    <div class="container bloc-lg">
+      <div class="row">
+        <div class="col-sm-12">
+          <h3 class="mg-md  tc-black">
+            <strong><%= @service.name %></strong>
+          </h3>
+          <p>
+            <%= simple_format (@service.description) %>
+          </p>
+
+
+
+          <br>
+          <div id="mini_logo">
+            <%= image_tag "https://s3-us-west-2.amazonaws.com/cuantopido/loguito.png", :class => "mg-sm", :alt => "logo" %>
+          </div>
+          <div class="panel">
+            <div class="panel-heading">
+              <h3 class="mg-clear  text-center">
+                DESCRIPCIÓN DEL SERVICIO
+              </h3>
+              <%= @service.final_price %>
+            </div>
+            <div class="panel-body brands">
+              <div class="row">
+
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-heading">
+              <h3 class="mg-clear text-center tc-orange">
+                DATOS DE CONTACTO
+              </h3>
+            </div>
+            <div class="panel-body brands">
+              <div class="row">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- bloc-3 END -->
+
+</div>
+<!-- Bloc Group END -->
+
+
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5&appId=129263057073";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>

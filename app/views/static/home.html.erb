@@ -1,0 +1,197 @@
+<%= render :partial => 'partials/menu_gral' %>
+
+<!-- video -->
+<div class="bloc bg-fondo-video d-bloc b-parallax" id="video">
+  <div class="container bloc-lg">
+    <div class="row">
+      <div class="col-sm-8 col-md-offset-2 text-center">
+        <div class="embed-responsive embed-responsive-16by9 fadeIn animDelay02 animated">
+          <iframe src="https://player.vimeo.com/video/111507117" frameborder="0" class="embed-responsive-item fadeIn animDelay02 animated">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- video END -->
+
+<!-- bloc-0 -->
+<div class="bloc bgc-white l-bloc tc-black" id="productos_feat">
+  <div class="container bloc-xl">
+    <div class="row">
+      <h3 class="text-center tc-portland-orange home_title">
+        Productos
+      </h3>
+      <div class="col-sm-3">
+        <div class="text-center">
+          <span class="fa fa-search icon-round icon-md icon-portland-orange animated fadeInUp"></span>
+        </div>
+        <h3 class="text-center mg-md tc-portland-orange ">
+          Busca
+        </h3>
+        <p class="text-center">
+          Busca tu producto en nuestra base de datos. Cada semana vamos agregando nuevos productos y categorías.
+        </p>
+      </div>
+      <div class="col-sm-3">
+        <div class="text-center">
+          <span class="fa fa-check icon-round icon-md icon-portland-orange animated fadeInUp"></span>
+        </div>
+        <h3 class="text-center mg-md tc-portland-orange ">
+          Revisa
+        </h3>
+        <p class="text-center">
+          Revisa la información publicada, puedes puntuar el producto, escribir un comentario o pasar la voz en facebook ;)
+        </p>
+      </div>
+      <div class="col-sm-3">
+        <div class="text-center">
+          <span class="fa fa-exchange icon-round icon-md icon-portland-orange animated fadeInUp"></span>
+        </div>
+        <h3 class="text-center mg-md tc-portland-orange ">
+          Compara
+        </h3>
+        <p class="text-center">
+          Compara el precio de tu productos con las principales tiendas del retail.
+        </p>
+      </div>
+      <div class="col-sm-3">
+        <div class="text-center">
+          <span class="fa fa-comments icon-round icon-md icon-portland-orange animated fadeInUp"></span>
+        </div>
+        <h3 class="text-center mg-md tc-portland-orange ">
+          2ª mano
+        </h3>
+        <p class="text-center">
+          También puedes buscar tu producto en los conocidos portales de venta de productos de segunda mano.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- bloc-0 END -->
+
+<!-- bloc-1 -->
+<div class="bloc bgc-portland-orange d-bloc tc-white" id="servicios_feat">
+  <div class="container bloc-xl">
+    <div class="row">
+      <h3 class="text-center tc-white home_title">
+        Servicios
+      </h3>
+      <div class="col-sm-3">
+        <div class="text-center">
+          <span class="fa fa-search icon-round icon-md icon-white animated fadeInUp"></span>
+        </div>
+        <h3 class="text-center mg-md tc-white ">
+          Busca
+        </h3>
+        <p class="text-center">
+          Tenemos una gran cantidad de servicios que ofrecen nuestros usuarios. Seguro que encuentras lo que necesitas.
+        </p>
+      </div>
+      <div class="col-sm-3">
+        <div class="text-center">
+          <span class="fa fa-pencil icon-round icon-md icon-white animated fadeInUp"></span>
+        </div>
+        <h3 class="text-center mg-md tc-white ">
+          Publica
+        </h3>
+        <p class="text-center">
+          Si quieres ofrecer algún servicio, puedes publicarlo acá y lo agregaremos para que todos nuestros usuarios lo vean.
+        </p>
+      </div>
+      <div class="col-sm-3">
+        <div class="text-center">
+          <span class="fa fa-child icon-round icon-md icon-white animated fadeInUp"></span>
+        </div>
+        <h3 class="text-center mg-md tc-white ">
+          Contrata
+        </h3>
+        <p class="text-center">
+          En cada servicio publicado esta los datos del la persona que los realiza, adelante, no seas timido ;)
+        </p>
+      </div>
+      <div class="col-sm-3">
+        <div class="text-center">
+          <span class="fa fa-bullhorn icon-round icon-md icon-white animated fadeInUp"></span>
+        </div>
+        <h3 class="text-center mg-md tc-white ">
+          Califica
+        </h3>
+        <p class="text-center">
+          Si estas conforme con el servicio prestado déjanos tu comentario, eso ayuda a toda la comunidad.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- bloc-1 END -->
+
+<!-- description -->
+<!--<div class="bloc bgc-white l-bloc" id="description">
+  <div class="container bloc-xxl">
+    <div class="row">
+      <div class="col-sm-10 col-md-offset-1 text-center">
+        <h2 class="text-center tc-orange mg-lg">
+          ¿Tienes un producto y quieres saber <br> cuánto vale en el mercado?
+        </h2>
+
+        <%= link_to products_path do %>
+            <li class="tc-onyx btn btn-charcoal btn-sq">
+              <span class="fa fa-search fa-fw"></span> Buscalo en nuetro catalogo
+            </li>
+        <% end %>
+
+
+      </div>
+    </div>
+  </div>
+</div>-->
+<!-- description END -->
+
+<!-- last-add -->
+<div class="bloc l-bloc" id="last-add">
+  <div class="container bloc-lg">
+    <div class="row">
+      <div class="col-sm-12">
+        <h3 class="mg-md text-center tc-orange">
+          Los más buscados
+        </h3>
+        <div class="owl-carousel text-center">
+          <% @products.all.order("id desc").limit(6).each do |d| %>
+              <%= link_to d do %>
+                  <%= image_tag d.img.url(:large), :class => "img-responsive center-block img-frame prod" %>
+              <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- last-add END -->
+
+<!-- most-search -->
+<div class="bloc bgc-charcoal l-bloc" id="most-search">
+  <div class="container bloc-lg">
+    <div class="row">
+      <div class="col-sm-12">
+        <h3 class="mg-md text-center tc-white">
+          Últimos productos
+        </h3>
+        <div class="owl-carousel text-center">
+          <% @products.all.limit(6).each do |e| %>
+              <%= link_to e do %>
+                  <%= image_tag e.img.url(:large), :class => "img-responsive center-block img-frame prod" %>
+              <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- most-search END -->
+
+
+
+
+

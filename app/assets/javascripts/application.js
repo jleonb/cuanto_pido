@@ -1,0 +1,10 @@
+//= require jquery
+//= require jquery.turbolinks
+//= require jquery_ujs
+//= require_tree .
+//= require bootstrap
+//= require jquery.raty
+//= require ratyrate
+//= require owl.carousel
+//= require blocs
+//= require turbolinks

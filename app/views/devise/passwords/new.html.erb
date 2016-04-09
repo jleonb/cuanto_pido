@@ -1,0 +1,44 @@
+<%= render :partial => 'partials/menu_devise' %>
+
+<div class="bloc bgc-anti-flash-white l-bloc" id="session">
+  <div class="container bloc-lg">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="row">
+          <div class="col-sm-3">
+            <span class="empty-column"></span>
+          </div>
+          <div class="col-sm-6">
+            <div class="panel">
+              <div class="panel-heading bgc-charcoal">
+                <h4 class="mg-clear tc-white text-center">
+                  ¿OLVIDO SU CONTRASEÑA?
+                </h4>
+              </div>
+              <div class="panel-body">
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                    <%= devise_error_messages! %>
+                    <div class="field">
+                      <%= f.label :email %> <br>
+                      <%= f.email_field :email, autofocus: true %> <br>
+                    </div>
+                    <div class="actions">
+                      <br>
+                      <%= f.submit "Enviame las instrucciones de recuperación", :class => "btn   btn-sq btn-charcoal" %>
+                    </div>
+                <% end %>
+
+                <p>
+                  <%= render "devise/shared/links" %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <span class="empty-column"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

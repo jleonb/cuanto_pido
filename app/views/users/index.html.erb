@@ -1,0 +1,46 @@
+<%= render :partial => 'partials/menu_gral' %>
+
+<!-- bloc-8 -->
+<div class="bloc bgc-anti-flash-white l-bloc" id="">
+  <div class="container bloc-sm">
+    <div class="row">
+      <div class="col-sm-12">
+        <h3 class="mg-md text-center tc-orange">
+          <strong>USUARIOS</strong>
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- bloc-8 END -->
+
+<!-- bloc-9 -->
+<div class="bloc bgc-anti-flash-white l-bloc" id="user-list">
+  <div class="container bloc-sm">
+    <div class="row">
+      <div class="col-sm-12">
+        <table>
+          <thead>
+          <tr>
+            <th>Email </th>
+            <th colspan="6"></th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <% @users.each do |user| %>
+              <tr>
+                <td><%= user.email %></td>
+                <td><div class="btn-group" role="group" aria-label="...">
+                      <button type="button" class="btn btn-default btn-xs"><%= link_to 'Eliminar', user, method: :delete, data: { confirm: 'Estás seguro?' }, :class => 'tc-onyx' %></button>
+                    </div>
+                </td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- bloc-9 END -->
