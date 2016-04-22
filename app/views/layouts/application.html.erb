@@ -26,48 +26,54 @@
           <h4 class="mg-lg tc-white">
             Acerca
           </h4>
-          <h4 class="mg-sm tc-manatee">
+          <h5 class="mg-sm tc-manatee">
             <span class="fa fa-envelope-o"></span> hola@cuantopido.cl
-          </h4>
-          <h4 class="mg-md tc-manatee">
+          </h5>
+          <h5 class="mg-md tc-manatee">
             <span class="fa fa-thumbs-o-up"></span> Trabaja con nosotros
-          </h4>
+          </h5>
         </div>
         <div class="col-sm-3">
           <h4 class="mg-lg tc-white">
             Mapa Del Sitio
           </h4>
-          <h4 class="mg-sm tc-manatee">
+          <h5 class="mg-sm tc-manatee">
             <span class="fa fa-remove icon-sm"></span> Inicio
-          </h4>
-          <h4 class="mg-sm tc-manatee">
+          </h5>
+          <h5 class="mg-sm tc-manatee">
             <span class="fa fa-remove icon-sm"></span> Servicios
-          </h4>
-          <h4 class="mg-sm tc-manatee">
+          </h5>
+          <h5 class="mg-sm tc-manatee">
             <span class="fa fa-remove icon-sm"></span> Productos
-          </h4>
-          <h4 class="mg-sm tc-manatee">
+          </h5>
+          <h5 class="mg-sm tc-manatee">
             <span class="fa fa-remove icon-sm"></span> Registrate
-          </h4>
-          <h4 class="mg-sm tc-manatee">
+          </h5>
+          <h5 class="mg-sm tc-manatee">
             <span class="fa fa-remove icon-sm"></span> Ingresar
-          </h4>
+          </h5>
         </div>
         <div class="col-sm-3">
           <h4 class="mg-lg tc-white">
             Ayuda
           </h4>
-          <h4 class="mg-md tc-manatee">
+          <h5 class="mg-md tc-manatee">
             <span class="fa fa-question-circle"></span> Contacto
-          </h4>
+          </h5>
         </div>
         <div class="col-sm-3">
           <h4 class="mg-lg tc-white">
             Redes Sociales
           </h4>
-          <%= image_tag "facebook.png", :class => "img-responsive mg-sm", :alt => "logo", :width => "40" %>
-          <%= image_tag "twitter.png", :class => "img-responsive mg-sm", :alt => "logo", :width => "40" %>
-          <%= image_tag "instagram.png", :class => "img-responsive mg-sm", :alt => "logo", :width => "40" %>
+          <%= link_to "http://www.facebook.com" do %>
+              <%= image_tag "facebook.png", :class => "img-responsive mg-sm", :alt => "logo", :width => "30" %>
+          <% end %>
+          <%= link_to "http://www.twitter.com" do %>
+            <%= image_tag "twitter.png", :class => "img-responsive mg-sm", :alt => "logo", :width => "30" %>
+          <% end %>
+          <%= link_to "http://www.instagram.com" do %>
+            <%= image_tag "instagram.png", :class => "img-responsive mg-sm", :alt => "logo", :width => "30" %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -151,14 +157,20 @@
   </div>-->
   <!-- Footer - bloc-13 END -->
 
-  <%= render :partial => 'partials/modals' %>
+
 
 </div>
 <!-- ScrollToTop Button -->
 <a class="bloc-button btn btn-d scrollToTop" onclick="scrollToTarget('1')"><span class="fa fa-chevron-up"></span></a>
 <!-- ScrollToTop Button END-->
 
+<%= render :partial => 'partials/modals' %>
+<%= render :partial => 'partials/loginmodal' %>
+<%= render :partial => 'partials/signupmodal' %>
+<%= render :partial => 'partials/forgotpasswordmodal' %>
+
 </body>
+
 <script type="application/javascript">
   $(document).ready(function () {
     $(".owl-carousel").owlCarousel({
@@ -174,4 +186,5 @@
     });
   })
 </script>
+
 </html>

@@ -18,6 +18,13 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    if params[:category] == nil
+      @products = Product.all
+    else
+      @products = Product.where(category: params[:category].titleize)
+    end
+    #alphabetical
+    @my_categoryes = Product.select(:category).order(:category).distinct
   end
 
   # GET /users/new
@@ -29,13 +36,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
 
-    if params[:category] == nil
-      @products = Product.all
-    else
-      @products = Product.where(category: params[:category].titleize)
-    end
-    #alphabetical
-    @my_categoryes = Product.select(:category).order(:category).distinct
+    
   end
 
   # POST /users

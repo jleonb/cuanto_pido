@@ -8,6 +8,7 @@
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
   <%= link_to "Olvidó su contraseña?", new_password_path(resource_name) %><br />
+  <%= link_to "¿Olvidó su contraseña?", "#forgot", "data-toggle" => "modal" %>
 <% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>

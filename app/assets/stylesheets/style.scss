@@ -395,6 +395,15 @@ button{
 	outline: none!important;
 }
 
+.btn-wire{
+	background:transparent!important;
+	border:2px solid transparent;
+}
+.btn-wire:hover{
+	background:transparent!important;
+	border:2px solid transparent;
+}
+
 .btn-sq{
 	border-radius: 0px;
 }
@@ -486,6 +495,34 @@ iframe{
 .bg-fondo-video {
   background-image: image-url('fondo_video_2.jpg');
 }
+.bgc-white{
+  background-color:#ffffff;
+}
+.bgc-outer-space{
+  background-color:#47454B;
+}
+.bgc-platinum{
+  background-color:#E1E0E2;
+}
+
+/* Button colour styles */
+
+.wire-btn-portland-orange{
+	color:#F25E38!important;
+	border-color:#F25E38!important;
+}
+.wire-btn-white{
+	color:#ffffff!important;
+	border-color:#ffffff!important;
+}
+.btn-deep-saffron{
+  background:rgb(242,94,56);
+  color:#FFFFFF!important;
+}
+.btn-deep-saffron:hover{
+  background:rgb(242,94,56);
+  color:#FFFFFF!important;
+}
 
 /* Text colour styles */
 
@@ -570,6 +607,28 @@ iframe{
 }
 
 
+
+/* = Panels
+-------------------------------------------------------------- */
+.panel{
+  border:0!important;
+  box-shadow: 0 0 2px rgba(0,0,0,.4);
+}
+.panel-heading, .panel-footer{
+  border-color: rgba(0,0,0,.1)!important;
+}
+.panel-sq, .panel-sq .panel-heading, .panel-sq .panel-footer{
+  border-radius:0;
+}
+.panel-rd{
+  border-radius:30px;
+}
+.panel-rd .panel-heading{
+  border-radius:29px 29px 0 0;
+}
+.panel-rd .panel-footer{
+  border-radius:0 0 29px 29px;
+}
 
 /* = Mobile adjustments 
 -------------------------------------------------------------- */
@@ -750,6 +809,9 @@ iframe{
 .navbar-form {
   margin-top: 12px;
   padding-right: 20em;
+}
+.radio label, .checkbox label {
+  color: #E1E0E2;
 }
 
 

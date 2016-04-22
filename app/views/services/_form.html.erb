@@ -19,7 +19,7 @@
         <div class="row">
           <div class="col-sm-12">
             <h3 class="mg-md text-center tc-orange">
-              <strong>PRESUPUESTO DE SERVICIOS</strong>
+              <strong>Presupuesto de servicios</strong>
             </h3>
             <p class="mg-md text-center">
               <strong>Si realizas algún servicio y quieres que nuestros usuarios te contacten, completa el siguiente formulario:</strong>
@@ -27,10 +27,46 @@
           </div>
         </div>
         <br><br>
-        <div class="row voffset">
-          <div class="col-sm-6">
-            <form>
+
+        <div class="col-xs-3"> <!-- required for floating -->
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs tabs-left">
+            <li class="active"><a href="#descripcion" data-toggle="tab"><i class="fa fa-edit"></i> Descripción</a></li>
+            <li><a href="#insumos" data-toggle="tab"><i class="fa fa-list-ul"></i> Insumos</a></li>
+            <li><a href="#horas" data-toggle="tab"><i class="fa fa-hourglass"></i> Cálculo de horas</a></li>
+            <li><a href="#valor" data-toggle="tab"><i class="fa fa-usd"></i> Valor final</a></li>
+            <li><a href="#contacto" data-toggle="tab"><i class="fa fa-user"></i> Datos de contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="col-xs-9">
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane active" id="descripcion">
+              
+               <div class="form-group">
+                <label>
+                  Nombre o tipo de servicio
+                </label>
+                <%= f.text_field :name, :class => "form-control" %>
+              </div>
+              <div class="field">
+                <label>
+                  Imagen (600*400px)
+                </label>
+                <%= f.file_field :img %>
+              </div>
               <div class="form-group">
+                <label>
+                  Descripción
+                </label>
+                <%= f.text_area :description, :class => "form-control" %>
+              </div>
+              
+            </div>
+            <div class="tab-pane" id="insumos">
+            	
+            	<div class="form-group">
                 <label>
                   Insumo 01
                 </label><br>
@@ -89,9 +125,7 @@
                   Valor
                 </label>
                 <%= f.number_field :pri5, :class => "form-control"  %>
-              </div>
-            </div>
-            <div class="col-sm-6">
+				</div>
               <div class="form-group">
                 <label>
                   Insumo 06
@@ -152,37 +186,11 @@
                 </label>
                 <%= f.number_field :pri10, :class => "form-control"  %>
               </div>
-              <div class="form-group">
-                <label>
-                  TOTAL INSUMOS
-                </label>
-
-              </div>
             </div>
-        </div>
-        <div class="row voffset">
-          <div class="form-group">
-            <div class="col-sm-6">
-              <p></p> <br><br>
-              <div class="form-group">
-                <label>
-                  Servicio (nombre)
-                </label>
-                <%= f.text_field :name, :class => "form-control" %>
-              </div>
-              <div class="field">
-                <label>
-                  Imagen (600*400px)
-                </label>
-                <%= f.file_field :img %>
-              </div>
-              <div class="form-group">
-                <label>
-                  Descripción
-                </label>
-                <%= f.text_area :description, :class => "form-control" %>
-              </div>
-              <div class="form-group">
+           
+            <div class="tab-pane" id="horas">
+            	
+            	<div class="form-group">
                 <label>
                   Horas de trabajo
                 </label>
@@ -194,7 +202,11 @@
                 </label>
                 <%= f.text_field :hours_price, :class => "form-control" %>
               </div>
-              <div class="form-group">
+            	
+            </div>
+            <div class="tab-pane" id="valor">
+            	
+				<div class="form-group">
                 <label>
                   Despacho
                 </label>
@@ -212,22 +224,27 @@
                 </label>
                 <%= f.text_field :final_price, :class => 'form-control' %>
               </div>
+              
+            </div>
+            <div class="tab-pane" id="contacto"></div>
+            
           </div>
+        </div>
 
 
               <div class='form-group-sm'>
                 <div class='btn-group pull-right' role='group' aria-label="...">
                   <button type="button" class="btn btn-default"><%= link_to 'Cancelar', services_path %></button>
                 </div>
-                <%= button_tag(type: 'submit', class: 'btn btn-sq btn-charcoal pull-right') do %>
-                    <i class='fa fa-arrow-up  icon-spacer'></i> PUBLICAR SERVICIO
+				  <%= button_tag(type: 'submit', class: 'btn btn-wire wire-btn-portland-orange pull-right') do %>
+                    <i class='fa fa-arrow-up  icon-spacer'></i> OK, Publicar Servicio
                 <% end %>
               </div>
-            </form>
-          </div>
+          
+       
         </div>
-      </div>
-    </div>
+     </div>
+
     <!-- bloc-7 END -->
 
 <% end %>
