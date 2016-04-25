@@ -27,14 +27,14 @@
           <div class="row">
             <br>
             <div class="col-md-6">
-              <%= link_to "http://www.facebook.com" do %>
+              <%= link_to user_omniauth_authorize_path(:facebook) do %>
                 <%= image_tag "is_facebook.png", :class => "img-responsive center-block", :alt => "logo", :width => "130" %>
-              <% end %>  
+              <% end %>
             </div>
             <div class="col-md-6">
               <%= link_to "http://www.twitter.com" do %>
-              <%= image_tag "is_twitter.png", :class => "img-responsive center-block", :alt => "logo", :width => "130" %>
-          <% end %>
+                <%= image_tag "is_twitter.png", :class => "img-responsive center-block", :alt => "logo", :width => "130" %>
+              <% end %>
             </div>
           </div>
         </div>

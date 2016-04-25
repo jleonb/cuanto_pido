@@ -19,7 +19,7 @@ gem 'owlcarousel-rails'
 gem 'font-awesome-rails'
 gem 'jquery-turbolinks'
 gem 'omniauth-facebook'
-gem 'omniauth-twitter'
+
 
 group :development, :test do
   gem 'byebug'
